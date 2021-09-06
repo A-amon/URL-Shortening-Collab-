@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+/***********************
+* FONT WEIGHTS
+*************************/
+/***********************
+* DEVICE SIZES
+*************************/
+/***********************
+* SPACING
+*************************/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/**********************
+* COMPONENTS
+************************/
+.container {
+  padding: 1rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .container {
+    max-width: 1020px;
+  }
+}
+
+/**********************
+* BOOST
+************************/
+.boost {
+  background-image: url("../assets/images/bg-boost-mobile.svg");
+  background-color: #3b3054;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.boost .container {
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.boost__title {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .boost {
+    background-image: url("../assets/images/bg-boost-desktop.svg");
+  }
+  .boost__title {
+    font-size: 2.5rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
