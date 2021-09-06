@@ -1,0 +1,17 @@
+@import 'partials/colors';
+@import 'partials/typography';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/reset';
+
+.container{
+	padding:$p-base;
+
+	@include tablet-query{
+		max-width:$d-tablet;
+	}
+
+	@include laptop-query{
+		max-width:$d-laptop;
+	}
+}
