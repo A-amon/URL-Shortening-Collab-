@@ -44,4 +44,8 @@
   font-size: 1.3rem;
   background-color: #2acfcf;
 }
+
+.btn-pill:hover {
+  background-color: #9ce3e2;
+}
 /*# sourceMappingURL=styles.css.map */
