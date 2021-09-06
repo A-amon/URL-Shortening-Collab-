@@ -30,6 +30,9 @@
 		text-transform: capitalize;
 		font-size: 1.3rem;
 		background-color: $c-cyan;
+		&:hover{
+			background-color: $c-morningglory;
+		}
 	}
 }
 

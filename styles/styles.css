@@ -50,6 +50,10 @@ body {
   background-color: #2acfcf;
 }
 
+.btn-pill:hover {
+  background-color: #9ce3e2;
+}
+
 /**********************
 * BOOST
 ************************/
