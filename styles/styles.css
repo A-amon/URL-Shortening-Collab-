@@ -58,10 +58,36 @@ body {
 * BOOST
 ************************/
 .boost {
-  background-image: url("../assets/images/bg-boost-mobile.svg");
   background-color: #3b3054;
+  position: relative;
+  overflow: hidden;
+}
+
+.boost.anim::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.boost::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: block;
+  background-image: url("../assets/images/bg-boost-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-transform: scale(5);
+          transform: scale(5);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .boost .container {
@@ -79,6 +105,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 1;
+  position: relative;
 }
 
 .boost__title {
@@ -88,7 +116,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .boost {
+  .boost::before {
     background-image: url("../assets/images/bg-boost-desktop.svg");
   }
   .boost__title {

@@ -40,10 +40,33 @@
 * BOOST
 ************************/
 .boost{
-	background-image:url('../assets/images/bg-boost-mobile.svg');
 	background-color: $c-darkviolet;
-	background-repeat: no-repeat;
-	background-size: cover;
+	position:relative;
+	overflow: hidden;
+
+	&.anim{
+		&::before{
+			transform:scale(1);
+		}
+	}
+
+	&::before{
+		content:'';
+		height:100%;
+		width:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin:auto;
+		display: block;
+		background-image:url('../assets/images/bg-boost-mobile.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		transform:scale(5);
+		transition:transform 1s;
+	}
 
 	.container{
 		min-height: 300px;
@@ -51,6 +74,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		z-index: 1;
+		position: relative;
 	}
 
 	&__title{
@@ -60,7 +85,9 @@
 	}
 
 	@include tablet-query{
-		background-image:url('../assets/images/bg-boost-desktop.svg');
+		&::before{
+			background-image:url('../assets/images/bg-boost-desktop.svg');
+		}
 		&__title{
 			font-size: 2.5rem;
 		}
