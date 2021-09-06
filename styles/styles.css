@@ -61,6 +61,76 @@ body {
   background-color: #9ce3e2;
 }
 
+/**********************
+* BOOST
+************************/
+.boost {
+  background-color: #3b3054;
+  position: relative;
+  overflow: hidden;
+}
+
+.boost.anim::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.boost::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: block;
+  background-image: url("../assets/images/bg-boost-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: scale(5);
+          transform: scale(5);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.boost .container {
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+.boost__title {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .boost::before {
+    background-image: url("../assets/images/bg-boost-desktop.svg");
+  }
+  .boost__title {
+    font-size: 2.5rem;
+  }
+}
+
 /*******************
 * FOOTER
 ********************/
@@ -191,72 +261,53 @@ body {
 }
 
 /**********************
-* BOOST
+* PARTICLES-JS
 ************************/
-.boost {
-  background-color: #3b3054;
-  position: relative;
-  overflow: hidden;
-}
-
-.boost.anim::before {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.boost::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  position: absolute;
+#particles-js {
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  display: block;
-  background-image: url("../assets/images/bg-boost-mobile.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-transform: scale(5);
-          transform: scale(5);
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-}
-
-.boost .container {
-  min-height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 100%;
+  width: 100%;
   z-index: 1;
-  position: relative;
+  pointer-events: none;
+  -webkit-animation: fadeInOut 2s 1 forwards ease-out;
+          animation: fadeInOut 2s 1 forwards ease-out;
 }
 
-.boost__title {
-  color: white;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 768px) {
-  .boost::before {
-    background-image: url("../assets/images/bg-boost-desktop.svg");
+/*
+* Scale up then fade out
+*/
+@-webkit-keyframes fadeInOut {
+  0% {
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
-  .boost__title {
-    font-size: 2.5rem;
+  25% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  25% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    border-radius: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */

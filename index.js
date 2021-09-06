@@ -21,3 +21,10 @@ const observeBoostIntersect = () => {
 }
 
 observeBoostIntersect()
+
+/**
+ * Setup particles js animation
+ */
+particlesJS.load('particles-js', 'particles.json', () => {
+	console.log(particlesJS)
+})
