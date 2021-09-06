@@ -9,6 +9,7 @@
 ********************/
 .container{
 	padding:$p-base;
+	margin: auto;
 
 	@include tablet-query{
 		max-width:$d-tablet;
@@ -16,6 +17,11 @@
 
 	@include laptop-query{
 		max-width:$d-laptop;
+	}
+
+	@include laptop-l-query{
+		padding:$p-base $p-base*5;
+		max-width: $d-laptop-l;
 	}
 }
 
@@ -29,5 +35,119 @@
 		text-transform: capitalize;
 		font-size: 1.3rem;
 		background-color: $c-cyan;
+	}
+}
+
+/*******************
+* FOOTER
+********************/
+.footer{
+	background-color: $c-verydarkviolet;
+	padding:$p-base*3 0;
+	
+	&, h3{
+		font-size: 1rem;
+	}
+
+	li{
+		list-style: none;
+	}
+	
+	.container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.logo path{
+		fill:$c-white;
+	}
+
+	&-col, &__icon{
+		margin-top:$m-base*2;
+	}
+
+	&-col{
+		&__title{
+			color:$c-white;
+			margin-bottom: $m-base;
+		}
+	}
+
+	&__item{
+		margin-bottom: $m-base/2;
+		text-transform: capitalize;
+	}
+
+	&__link{
+		text-decoration: none;
+		color:$c-grayishviolet;
+		&:hover{
+			color:$c-gray;
+		}
+	}
+
+	&__icons{
+		display: flex;
+		align-items: center;
+	}
+
+	&__icon{
+		&:not(:last-child){
+			margin-right:$m-base;
+		}
+
+		&:hover path{
+			fill:$c-gray;
+		}
+	}
+
+	@include tablet-query{
+		padding-bottom: $p-base * 5;
+
+		.container{
+			flex-direction: row;
+			text-align: left;
+			align-items: flex-start;
+		}
+
+		&__wrapper{
+			margin-left: auto;
+			display: flex;
+		}
+
+		&-col, &__icon{
+			margin-top:0;
+		}
+
+		&-col{
+			margin-right:$m-base*5;
+		}
+
+		&__icons{
+			flex-direction: column;
+		}
+
+		&__icon{
+			margin-bottom: $m-base;
+		}
+
+		&__icon:not(:last-child){
+			margin-right:0;
+		}
+	}
+
+	@include laptop-query{
+		&__icons{
+			flex-direction: row;
+		}
+
+		&__icon{
+			margin-bottom:0;
+			&:not(:last-child){
+				margin-right:$m-base*2;
+			}
+		}
 	}
 }
