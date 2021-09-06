@@ -4,9 +4,9 @@
 @import 'partials/mixins';
 @import 'partials/reset';
 
-/**********************
+/*******************
 * COMPONENTS
-************************/
+********************/
 .container{
 	padding:$p-base;
 	margin:auto;
@@ -17,6 +17,19 @@
 
 	@include laptop-query{
 		max-width:$d-laptop;
+	}
+}
+
+.btn{
+	&-pill{
+		padding:$p-base $p-base*2.5;
+		border-radius: 50px;
+		color:$c-white;
+		text-decoration: none;
+		font-weight: $fw-bold;
+		text-transform: capitalize;
+		font-size: 1.3rem;
+		background-color: $c-cyan;
 	}
 }
 

@@ -19,9 +19,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/**********************
+/*******************
 * COMPONENTS
-************************/
+********************/
 .container {
   padding: 1rem;
   margin: auto;
@@ -37,6 +37,17 @@ body {
   .container {
     max-width: 1020px;
   }
+}
+
+.btn-pill {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  background-color: #2acfcf;
 }
 
 /**********************
