@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+/***********************
+* FONT WEIGHTS
+*************************/
+/***********************
+* DEVICE SIZES
+*************************/
+/***********************
+* SPACING
+*************************/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-section {
+  padding: 1rem;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+  height: 190px;
+  background-color: #35323e;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(241, 238, 238, 0.2);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card::before {
+  content: "";
+  background-image: url(../assets/images/bg-shorten-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-top-right-radius: 15px;
+  width: 83.5%;
+  position: absolute;
+  top: -1.2px;
+  right: 10px;
+  left: 57px;
+  bottom: 0;
+}
+
+.form-card {
+  position: absolute;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form {
+  height: 30vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form__comment, .form__btn {
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  display: block;
+  width: 100%;
+  border-radius: 3.5px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(241, 238, 238, 0.2);
+  overflow: hidden;
+  outline-style: none;
+  resize: none;
+}
+
+.form__btn {
+  text-align: center;
+  padding: .8rem;
+  background-color: #2acfcf;
+  color: #f4f1f8;
+  font-weight: 700;
+}
+
+.section-container {
+  position: relative;
+  top: -113px;
+  background-color: #f4f1f8;
+  padding: 1rem;
+  z-index: -10;
+}
+
+.advanced {
+  margin-top: 7rem;
+  width: 100%;
+}
+
+.advanced__title, .advanced__body {
+  display: block;
+  margin: 0 auto;
+  width: 73%;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.advanced__body {
+  font-weight: 18px;
+  font-family: "Poppins", sans-serif;
+  width: 103%;
+  color: #9e9aa7;
+  padding: 1rem;
+}
+
+.recognition, .detail, .customizable {
+  padding: 1rem;
+  background-color: white;
+  margin-top: 4.5rem;
+  border-radius: 9.5px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  height: 260px;
+}
+
+.recognition__img, .detail__img, .customizable__img {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #232127;
+  background-image: url(../assets/icons/icon-brand-recognition.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.recognition__title, .detail__title, .customizable__title {
+  font-family: "Poppins", sans-serif;
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+.recognition__body, .detail__body, .customizable__body {
+  font-family: "Poppins", sans-serif;
+  color: #9e9aa7;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.recognition__body__bar--blue, .detail__body__bar--blue, .customizable__body__bar--blue {
+  width: 2px;
+  border-left: 4px solid #5bacc3;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail__img {
+  background-image: url(../assets/icons/icon-detailed-records.svg);
+}
+
+.customizable__img {
+  background-image: url(../assets/icons/icon-fully-customizable.svg);
+}
+/*# sourceMappingURL=styles.css.map */
