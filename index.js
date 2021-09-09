@@ -26,3 +26,14 @@ observeBoostIntersect()
  * Setup particles js animation
  */
 particlesJS.load('particles-js', 'particles.json')
+
+//toggle navigation bar
+document.getElementById('toggle').addEventListener('click', function() {
+	let nav = document.getElementById("nav");
+	if(nav.classList == "test"){
+		nav.classList.add("nav");
+	}else{
+		nav.classList.remove("nav");
+	}
+	console.log('hello')
+})

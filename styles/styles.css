@@ -46,6 +46,185 @@ body {
   }
 }
 
+/*************
+start of nav && hero section
+**************/
+@media only screen and (min-width: 768px) {
+  #toggle {
+    display: none;
+  }
+  .test button {
+    float: right;
+  }
+  .test a {
+    display: inline;
+  }
+  .hero {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .img-wrapper {
+    padding-bottom: 6rem;
+    position: relative;
+    top: 4rem;
+    left: 6rem;
+  }
+  .content {
+    width: 100%;
+    position: relative;
+    top: 5rem;
+    padding-left: 3rem;
+    width: 500px;
+    font-size: 1.5rem;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #nav > a {
+    margin-left: 5rem;
+    position: relative;
+    top: 1rem;
+    font-weight: 700;
+    color: #9e9aa7;
+  }
+  #nav > a:hover {
+    color: #232127;
+  }
+  .btn-mobile {
+    position: relative;
+    left: 20rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    border: none;
+  }
+  .btn-mobile:hover {
+    cursor: pointer;
+  }
+  .login {
+    position: relative;
+    left: 3rem;
+    top: 1rem;
+    color: #9e9aa7;
+    background-color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  .login:hover {
+    color: #232127;
+  }
+  .title {
+    margin-bottom: 1rem;
+  }
+  .getStarted {
+    margin-top: 2rem;
+  }
+}
+
+div > a {
+  text-decoration: none;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .toggle-nav {
+    float: right;
+  }
+  .test {
+    display: none;
+  }
+  .nav {
+    padding: 1rem;
+    background-color: #3b3054;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: auto;
+    border-radius: 12px;
+  }
+  .nav a {
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  .nav span {
+    border-bottom: 1px solid black;
+    border-color: white;
+    width: 80%;
+    margin: auto;
+  }
+  .nav .login {
+    font-weight: 700 !important;
+    border-radius: 50px;
+    color: white;
+    background-color: #3b3054;
+    font-size: 1.3rem;
+  }
+  .nav .btn-mobile {
+    padding: 0.5rem !important;
+    font-weight: 100;
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+  }
+}
+
+.description {
+  color: #bfbfbf;
+}
+
+.getStarted {
+  border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero .content .title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .description {
+    text-align: center;
+    color: #bfbfbf;
+    margin: 1rem;
+  }
+  .img-wrapper > img {
+    width: 100%;
+    margin: 1rem;
+  }
+  .getStarted {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+  }
+}
+
+/*************
+end of nav && hero section
+**************/
 .btn-pill {
   padding: 1rem 2.5rem;
   border-radius: 50px;
@@ -76,7 +255,7 @@ body {
 }
 
 .boost::before {
-  content: '';
+  content: "";
   height: 100%;
   width: 100%;
   position: absolute;
@@ -139,7 +318,8 @@ body {
   padding: 3rem 0;
 }
 
-.footer, .footer h3 {
+.footer,
+.footer h3 {
   font-size: 1rem;
 }
 
