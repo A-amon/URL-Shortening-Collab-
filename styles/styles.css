@@ -49,37 +49,43 @@ body {
 /*************
 start of nav && hero section
 **************/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1020px) {
   #toggle {
     display: none;
   }
-  .test button {
-    float: right;
-  }
-  .test a {
-    display: inline;
-  }
-  .hero {
+  .nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .nav a {
+    display: inline;
+  }
+  .hero {
+    padding-bottom: 3rem;
+    overflow: hidden;
+  }
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  .img-wrapper {
-    padding-bottom: 6rem;
-    position: relative;
-    top: 4rem;
-    left: 6rem;
-  }
   .content {
-    width: 100%;
-    position: relative;
-    top: 5rem;
-    padding-left: 3rem;
-    width: 500px;
+    max-width: 600px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     font-size: 1.5rem;
   }
   .navbar {
@@ -88,9 +94,7 @@ start of nav && hero section
     display: flex;
   }
   #nav > a {
-    margin-left: 5rem;
     position: relative;
-    top: 1rem;
     font-weight: 700;
     color: #9e9aa7;
   }
@@ -99,7 +103,6 @@ start of nav && hero section
   }
   .btn-mobile {
     position: relative;
-    left: 20rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -108,44 +111,151 @@ start of nav && hero section
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
     border: none;
+    margin-left: 2rem;
   }
   .btn-mobile:hover {
     cursor: pointer;
   }
   .login {
-    position: relative;
-    left: 3rem;
-    top: 1rem;
+    margin-left: auto;
+    display: block;
     color: #9e9aa7;
     background-color: white;
     font-weight: 700;
     font-size: 1.3rem;
+    margin-right: 2rem;
   }
   .login:hover {
     color: #232127;
   }
   .title {
     margin-bottom: 1rem;
+    font-size: 3.5rem;
   }
   .getStarted {
     margin-top: 2rem;
   }
+  .img-wrapper > img {
+    width: 100%;
+    position: relative;
+    left: 25%;
+  }
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .img-wrapper {
+    width: 50%;
+  }
 }
 
-div > a {
+#nav > a {
   text-decoration: none;
   font-weight: 500;
-  margin: 1rem;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1020px) {
+  #nav {
+    -webkit-animation: slidein 1s 1;
+            animation: slidein 1s 1;
+  }
+  @-webkit-keyframes slidein {
+    from {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    to {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  @keyframes slidein {
+    from {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+    }
+    to {
+      -webkit-transform: translateY(0%);
+              transform: translateY(0%);
+    }
+  }
+  .rotate {
+    -webkit-animation: rotation 1s;
+            animation: rotation 1s;
+  }
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+  }
+  @keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+  }
+  .in-rotate {
+    -webkit-animation: in-rotation 1s;
+            animation: in-rotation 1s;
+  }
+  @-webkit-keyframes in-rotation {
+    from {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+  @keyframes in-rotation {
+    from {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+  .img-wrapper {
+    overflow: hidden;
+  }
+  .img-wrapper img {
+    width: 100%;
+  }
+  #img {
+    -webkit-transition: 5s;
+    transition: 5s;
+  }
   .toggle-nav {
+    cursor: pointer;
     float: right;
   }
-  .test {
+  .nav {
     display: none;
   }
-  .nav {
+  .add-nav {
     padding: 1rem;
     background-color: #3b3054;
     display: -webkit-box;
@@ -161,26 +271,26 @@ div > a {
     margin: auto;
     border-radius: 12px;
   }
-  .nav a {
-    margin: auto;
+  .add-nav a {
+    display: block;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: white;
   }
-  .nav span {
+  .add-nav a:last-child {
     border-bottom: 1px solid black;
     border-color: white;
     width: 80%;
     margin: auto;
   }
-  .nav .login {
+  .add-nav .login {
     font-weight: 700 !important;
     border-radius: 50px;
     color: white;
     background-color: #3b3054;
     font-size: 1.3rem;
   }
-  .nav .btn-mobile {
+  .add-nav .btn-mobile {
     padding: 0.5rem !important;
     font-weight: 100;
     width: 80%;
@@ -199,7 +309,7 @@ div > a {
   border: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1020px) {
   .hero .content .title {
     text-align: center;
     font-weight: 700;
@@ -208,10 +318,6 @@ div > a {
   .description {
     text-align: center;
     color: #bfbfbf;
-    margin: 1rem;
-  }
-  .img-wrapper > img {
-    width: 100%;
     margin: 1rem;
   }
   .getStarted {

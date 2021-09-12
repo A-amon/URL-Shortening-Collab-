@@ -27,43 +27,41 @@
 /*************
 start of nav && hero section
 **************/
-@media only screen and(min-width:$d-tablet) {
+@media only screen and(min-width:$d-laptop) {
   #toggle {
     display: none;
   }
-  .test {
-    button {
-      float: right;
-    }
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
     a {
       display: inline;
     }
   }
+
   .hero {
-    display: flex;
-    flex-direction: row-reverse;
+    padding-bottom: 3rem;
+    overflow: hidden;
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
   }
-  .img-wrapper {
-    padding-bottom: 6rem;
-    position: relative;
-    top: 4rem;
-    left: 6rem;
-  }
+
   .content {
-    width: 100%;
-    position: relative;
-    top: 5rem;
-    padding-left: 3rem;
-    width: 500px;
+    max-width: 600px;
+    flex: 1;
     font-size: 1.5rem;
   }
   .navbar {
     display: flex;
   }
   #nav > a {
-    margin-left: 5rem;
     position: relative;
-    top: 1rem;
+    // top: 1rem;
     font-weight: $fw-bold;
     color: $c-grayishviolet;
     &:hover {
@@ -72,49 +70,113 @@ start of nav && hero section
   }
   .btn-mobile {
     position: relative;
-    left: 20rem;
+    // left: 20rem;
     display: flex;
     flex-direction: row-reverse;
     border: none;
+    margin-left: 2rem;
     &:hover {
       cursor: pointer;
     }
   }
   .login {
-    position: relative;
-    left: 3rem;
-    top: 1rem;
+    margin-left: auto;
+    display: block;
     color: $c-grayishviolet;
-
     background-color: $c-white;
     font-weight: $fw-bold;
     font-size: 1.3rem;
+    margin-right: 2rem;
+
     &:hover {
       color: $c-verydarkviolet;
     }
   }
   .title {
     margin-bottom: 1rem;
+    font-size: 3.5rem;
   }
-  .getStarted{
+  .getStarted {
     margin-top: 2rem;
   }
+  .img-wrapper > img {
+    width: 100%;
+    position: relative;
+    left: 25%;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .img-wrapper {
+    width: 50%;
+  }
 }
 
-div > a {
+#nav > a {
   text-decoration: none;
   font-weight: $fw-medium;
-  margin: $m-base;
+  margin: $m-base * 2;
+  display: flex;
+  justify-content: center;
 }
 
-@media only screen and(max-width:$d-tablet) {
+@media only screen and(max-width:$d-laptop) {
+  #nav {
+    animation: slidein 1s 1 ;
+
+    @keyframes slidein {
+      from {
+        transform: translateY(100%);
+      }
+    
+      to {
+        transform: translateY(0%);
+      }
+    }
+  }
+  .rotate {
+    animation: rotation 1s;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+  .in-rotate {
+    animation: in-rotation 1s;
+  }
+  @keyframes in-rotation {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .img-wrapper {
+    img {
+      width: 100%;
+    }
+
+    overflow: hidden;
+  }
+  #img {
+    transition: 5s;
+  }
   .toggle-nav {
+    cursor: pointer;
     float: right;
   }
-  .test {
+  .nav {
     display: none;
   }
-  .nav {
+  .add-nav {
     padding: $p-base;
     background-color: $c-darkviolet;
     display: flex;
@@ -122,18 +184,20 @@ div > a {
     justify-content: center;
     margin: auto;
     border-radius: 12px;
+
     a {
-      margin: auto;
+      display: block;
       margin-top: $m-base;
       margin-bottom: $m-base;
       color: $c-white;
+      &:last-child {
+        border-bottom: 1px solid black;
+        border-color: $c-white;
+        width: 80%;
+        margin: auto;
+      }
     }
-    span {
-      border-bottom: 1px solid black;
-      border-color: $c-white;
-      width: 80%;
-      margin: auto;
-    }
+
     .login {
       font-weight: $fw-bold !important;
       border-radius: 50px;
@@ -159,7 +223,7 @@ div > a {
 .getStarted {
   border: none;
 }
-@media only screen and(max-width:$d-tablet) {
+@media only screen and(max-width:$d-laptop) {
   .hero .content .title {
     text-align: center;
     font-weight: $fw-bold;
@@ -170,10 +234,7 @@ div > a {
     color: $c-gray;
     margin: $m-base;
   }
-  .img-wrapper > img {
-    width: 100%;
-    margin: $m-base;
-  }
+
   .getStarted {
     display: flex;
     margin: auto;
