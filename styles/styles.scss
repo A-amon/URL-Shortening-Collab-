@@ -177,12 +177,15 @@ start of nav && hero section
     display: none;
   }
   .add-nav {
+    position: absolute;
+    right: 2.5%;
+    width: 95%;
+    margin-top: 2rem!important;
     padding: $p-base;
     background-color: $c-darkviolet;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
     border-radius: 12px;
 
     a {

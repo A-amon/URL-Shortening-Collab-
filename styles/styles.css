@@ -256,6 +256,10 @@ start of nav && hero section
     display: none;
   }
   .add-nav {
+    position: absolute;
+    right: 2.5%;
+    width: 95%;
+    margin-top: 2rem !important;
     padding: 1rem;
     background-color: #3b3054;
     display: -webkit-box;
@@ -268,7 +272,6 @@ start of nav && hero section
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: auto;
     border-radius: 12px;
   }
   .add-nav a {
