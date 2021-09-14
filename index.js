@@ -46,7 +46,6 @@ form.addEventListener('submit', (e) => {
         originalT.textContent = response.data.result.full_short_link3
         shortT.textContent = response.data.result.short_link3
 
-        console.log(short)
         //check console for Processed URL or errors
         drop.classList.toggle("drop")
 
@@ -70,7 +69,7 @@ form.addEventListener('submit', (e) => {
 const copyBtn = document.querySelectorAll('.x');
 copyBtn.forEach(item => {
   item.addEventListener('click', (e) => {
-
+    item.classList.toggle('active');
     short.classList.add("bounce");
     navigator.clipboard.writeText(short.textContent);
     shortS.classList.add("bounce-2")
