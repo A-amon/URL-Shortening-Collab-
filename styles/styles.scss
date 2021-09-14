@@ -952,8 +952,11 @@ background-image: url(../assets/icons/icon-fully-customizable.svg);
     }
 
 .error-message{
-	      border: 1px solid $c-red;
+	      border: 4px solid $c-red;
 	      color: $c-red;
+        &::placeholder{
+          color: $c-red;
+        }
     
     }
 
