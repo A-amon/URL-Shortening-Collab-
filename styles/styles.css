@@ -256,6 +256,10 @@ start of nav && hero section
     display: none;
   }
   .add-nav {
+    position: absolute;
+    right: 2.5%;
+    width: 95%;
+    margin-top: 2rem !important;
     padding: 1rem;
     background-color: #3b3054;
     display: -webkit-box;
@@ -268,7 +272,6 @@ start of nav && hero section
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: auto;
     border-radius: 12px;
   }
   .add-nav a {
@@ -649,6 +652,7 @@ end of nav && hero section
           align-items: center;
   padding: 1.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -682,10 +686,10 @@ end of nav && hero section
   background-size: 100%;
   border-top-right-radius: 12px;
   width: 83.5%;
+  height: 75%;
   position: absolute;
   top: 0.8px;
-  right: 8px;
-  left: 54px;
+  right: 0;
   bottom: 0;
 }
 
@@ -693,13 +697,13 @@ end of nav && hero section
   .card::before {
     width: 61.5%;
     top: -1.2px;
-    left: 277px;
   }
 }
 
 @media screen and (min-width: 1020px) {
   .card::before {
     width: 100%;
+    height: 100%;
     top: -0.2px;
     left: 0px;
     border-bottom-right-radius: 10px;
@@ -733,9 +737,9 @@ end of nav && hero section
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -753,6 +757,9 @@ end of nav && hero section
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     height: 40px;
     position: relative;
   }
@@ -768,7 +775,6 @@ end of nav && hero section
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(241, 238, 238, 0.2);
-  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -807,9 +813,8 @@ end of nav && hero section
 }
 
 .form__btn:hover {
+  background-color: #9ce3e2;
   cursor: pointer;
-  -webkit-filter: brightness(1.1);
-          filter: brightness(1.1);
 }
 
 .dropedown-container {
@@ -1208,24 +1213,8 @@ end of nav && hero section
   }
 }
 
-@media screen and (min-width: 1020px) {
-  .detail {
-    -webkit-transform: translateY(28px);
-            transform: translateY(28px);
-  }
-}
-
-@media screen and (min-width: 1020px) {
-  .customizable {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-}
-
 .detail__img {
   background-image: url(../assets/icons/icon-detailed-records.svg);
-  -webkit-transform: translateY(28px);
-          transform: translateY(28px);
 }
 
 .customizable__img {
@@ -1236,6 +1225,8 @@ end of nav && hero section
   font-family: "Poppins", sans-serif;
   color: #f46262;
   font-size: .6rem;
+  padding: 1rem 0;
+  display: block;
 }
 
 @media screen and (min-width: 1020px) {
@@ -1243,6 +1234,7 @@ end of nav && hero section
     position: absolute;
     top: 114%;
     left: 0;
+    padding: 0;
   }
 }
 
