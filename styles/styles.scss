@@ -836,7 +836,7 @@ font-family: $ff-poppins;
 	    border-radius: 9.5px;
 	    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 	    border: 1px solid rgb(255, 255, 255);
-	    height: 260px;
+	    // height: 260px;
 		@include tablet-query{
 		}
 		@include laptop-query{
@@ -870,15 +870,17 @@ font-family: $ff-poppins;
    }
  &__title{
 		font-family: $ff-poppins; 
-        width: 63%;
+    width: 63%;
 		display: block;
 		margin: 0 auto;
-	    padding-bottom: 1rem;
+    text-align: center;
+	  padding-bottom: 1rem;
 		@include tablet-query{
 		width: 27%;
 
 		}
 		@include laptop-query{
+      text-align: start;
 		width: 109%;
 		font-size: 10x;
 		}
@@ -911,23 +913,24 @@ font-family: $ff-poppins;
 	
 }
 .detail{
+  transform: translateY(0);
   @include laptop-query{
-  //  transform: translateY(28px);
+   transform: translateY(28px);
   }
  }
  .customizable{
+  transform: translateY(0);
    @include laptop-query{
-    //  transform: translateY(65px);
+     transform: translateY(65px);
     }
  }
 .detail__img{
-	      background-image: url(../assets/icons/icon-detailed-records.svg);
-        // transform: translateY(28px);
-
+  
+ background-image: url(../assets/icons/icon-detailed-records.svg);
     }
 
 .customizable__img{
-	      background-image: url(../assets/icons/icon-fully-customizable.svg);
+background-image: url(../assets/icons/icon-fully-customizable.svg);
 
 }
 
