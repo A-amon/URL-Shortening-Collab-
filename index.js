@@ -13,17 +13,17 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const change = document.querySelector(".advanced")
   const drop = document.querySelector(".dropedown-container")
-  const text = document.getElementById("text");
+  const text = document.querySelector(".text");
   const input = document.getElementById("input").value;
-  const get = document.querySelector(".sx");
-  const section = document.querySelector(".main-form")
+  const get = document.querySelector(".add");
+  const section = document.querySelector(".form-section")
   let newDiv = document.createElement('div');
   newDiv.classList.add("new__cont");
 
 
   if (input === "") {
     text.textContent = "please add a link";
-    get.classList.add('error-message');
+    get.classList.add('error-messages');
 
   } else {
     document.getElementById('input').value = "";
@@ -66,7 +66,7 @@ form.addEventListener('submit', (e) => {
  * copy shortened URL 
  */
 
-const copyBtn = document.querySelectorAll('.x');
+const copyBtn = document.querySelectorAll('.copy');
 copyBtn.forEach(item => {
   item.addEventListener('click', (e) => {
     item.classList.toggle('active');
