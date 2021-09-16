@@ -13,7 +13,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const change = document.querySelector(".advanced")
   const drop = document.querySelector(".dropedown-container")
-  const text = document.querySelector(".text");
+  const text = document.querySelector(".form__text");
   const input = document.getElementById("input").value;
   const get = document.querySelector(".add");
   const section = document.querySelector(".form-section")
@@ -23,7 +23,7 @@ form.addEventListener('submit', (e) => {
 
   if (input === "") {
     text.textContent = "please add a link";
-    get.classList.add('error-messages');
+    get.classList.add('form__error--messages');
 
   } else {
     document.getElementById('input').value = "";

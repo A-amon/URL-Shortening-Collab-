@@ -529,6 +529,7 @@ end of nav && hero section
     @include laptop-query{
       flex-direction: row;
       justify-content: space-around;
+      position: relative;
     }
   &__input{
     font-size: 1rem;
@@ -550,7 +551,31 @@ end of nav && hero section
     @include laptop-query{
       width: 17%;
     }
+
   }
+
+  &__text {
+    font-family: $ff-poppins;
+    color: $c-red;
+    font-size: 0.8rem;
+    padding-bottom: .9rem ;
+    display: block;
+  @include laptop-query {
+    position: absolute;
+    top:100%;
+    left: 0;
+    padding: 0 2.1rem;
+  }
+}
+
+&__error--messages {
+  border: 3px solid $c-red;
+  color: $c-red;
+&::placeholder {
+  color: $c-red;
+  font-family: $ff-poppins;
+}
+}
 }
 /*
 * dropedown
@@ -857,47 +882,24 @@ end of nav && hero section
 }
 }
 
-.text {
-    font-family: $ff-poppins;
-    color: $c-red;
-    font-size: 0.8rem;
-    padding-bottom: .9rem ;
-    display: block;
-  @include laptop-query {
-    position: absolute;
-    top: 76%;
-    left: 35px;
-    // top:100%;
-    // left: 0;
-    padding: 0;
-  }
-}
 
-.error-messages {
-    border: 3px solid $c-red;
-    color: $c-red;
-  &::placeholder {
-    color: $c-red;
-    font-family: $ff-poppins;
-  }
-}
 
-.new {
-    width: 100%;
-    height: 140px;
-    background-color: transparent;
+// .new {
+//     width: 100%;
+//     height: 140px;
+//     background-color: transparent;
 
-  &__cont {
-    width: 100%;
-    height: 140px;
-    color: $c-lightragy;
-    background-color: $c-red;
-    margin-top: 2rem;
-  }
-  &__body {
-    color: $c-verydarkviolet;
-    text-align: justify;
-    padding: $p-base;
-    width: 90%;
-  }
-}
+//   &__cont {
+//     width: 100%;
+//     height: 140px;
+//     color: $c-lightragy;
+//     background-color: $c-red;
+//     margin-top: 2rem;
+//   }
+//   &__body {
+//     color: $c-verydarkviolet;
+//     text-align: justify;
+//     padding: $p-base;
+//     width: 90%;
+//   }
+// }
