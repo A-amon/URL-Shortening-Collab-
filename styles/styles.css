@@ -66,7 +66,6 @@ start of nav && hero section
     display: inline;
   }
   .hero {
-    padding-bottom: 3rem;
     overflow: hidden;
   }
   .hero .container {
@@ -242,6 +241,8 @@ start of nav && hero section
     overflow: hidden;
   }
   .img-wrapper img {
+    padding-bottom: 2rem;
+    padding-top: 0;
     width: 100%;
   }
   #img {
@@ -601,47 +602,26 @@ end of nav && hero section
   }
 }
 
-.main-form {
-  position: relative;
-  top: 30px;
-  background-color: #f4f1f8;
-  margin-top: 7rem;
-}
-
-@media screen and (min-width: 768px) {
-  .main-form {
-    margin-top: 11rem;
-  }
-}
-
+/*
+* form section
+*/
 .form-section {
-  position: relative;
-  top: -120px;
-  padding: 1.5rem;
+  margin-top: 11rem;
+  background-color: #F0F1F6;
+  padding-bottom: 5rem;
 }
 
-@media screen and (min-width: 768px) {
-  .form-section {
-    top: -162px;
-  }
-}
-
-@media screen and (min-width: 1020px) {
-  .form-section {
-    top: -91px;
-    padding: 3rem;
-  }
-}
-
-.card {
+.form-container {
   width: 100%;
-  height: 190px;
+  height: 199px;
+  padding: 4rem 0;
   background-color: #35323e;
   border-radius: 15px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(241, 238, 238, 0.2);
   position: relative;
+  top: -108px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -651,42 +631,24 @@ end of nav && hero section
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: -5rem;
   overflow: hidden;
 }
 
-@media screen and (min-width: 768px) {
-  .card {
-    height: 293px;
-  }
-}
-
 @media screen and (min-width: 1020px) {
-  .card {
-    width: 94%;
-    height: 104px;
-    border-radius: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    margin: 0 auto;
-    margin-bottom: 2.4rem;
+  .form-container {
+    height: 119px;
+    top: -91px;
   }
 }
 
-.card::before {
+.form-container::before {
   content: "";
   background-image: url(../assets/images/bg-shorten-mobile.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   border-top-right-radius: 12px;
-  width: 83.5%;
+  width: 85.5%;
   height: 75%;
   position: absolute;
   top: 0.8px;
@@ -694,43 +656,29 @@ end of nav && hero section
   bottom: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .card::before {
-    width: 61.5%;
-    top: -1.2px;
-  }
-}
-
 @media screen and (min-width: 1020px) {
-  .card::before {
-    width: 100%;
-    height: 100%;
-    top: -0.2px;
-    left: 0px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+  .form-container::before {
     background-image: url(../assets/images/bg-shorten-desktop.svg);
+    width: 100.5%;
+    height: 102%;
+    top: 1px;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transition: -webkit-transform 0.7s;
+    transition: -webkit-transform 0.7s;
+    transition: transform 0.7s;
+    transition: transform 0.7s, -webkit-transform 0.7s;
   }
 }
 
-.form-card {
-  position: absolute;
-  width: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 10;
+.form-container__anim::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .form {
-  height: 30vw;
   width: 100%;
+  padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -741,94 +689,106 @@ end of nav && hero section
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-  .form {
-    height: 20vw;
-  }
+  z-index: 10;
 }
 
 @media screen and (min-width: 1020px) {
   .form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    height: 40px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     position: relative;
   }
 }
 
-.form__comment {
-  font-family: "Poppins", sans-serif;
-  text-align: justify;
-  display: block;
+.form__input {
+  font-size: 1rem;
   width: 100%;
-  padding: .8rem;
-  border-radius: 3.5px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(241, 238, 238, 0.2);
-}
-
-@media screen and (min-width: 768px) {
-  .form__comment {
-    padding: .8rem;
-  }
+  padding: 1rem;
 }
 
 @media screen and (min-width: 1020px) {
-  .form__comment {
+  .form__input {
     width: 75%;
   }
 }
 
 .form__btn {
-  font-family: "Poppins", sans-serif;
-  text-align: justify;
-  display: block;
   width: 100%;
-  padding: .8rem;
-  border-radius: 3.5px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(241, 238, 238, 0.2);
-  text-align: center;
-  padding: .8rem;
+  padding: 1rem;
   background-color: #2acfcf;
-  color: #f4f1f8;
-  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 1020px) {
   .form__btn {
-    width: 20%;
+    width: 17%;
   }
 }
 
-.form__btn:hover {
-  background-color: #9ce3e2;
-  cursor: pointer;
+.form__text {
+  font-family: "Poppins", sans-serif;
+  color: #f46262;
+  font-size: 0.8rem;
+  padding-bottom: 0.9rem;
+  display: block;
 }
 
+@media screen and (min-width: 1020px) {
+  .form__text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0 2.1rem;
+  }
+}
+
+.form__error--messages {
+  border: 3px solid #f46262;
+  color: #f46262;
+}
+
+.form__error--messages::-webkit-input-placeholder {
+  color: #f46262;
+  font-family: "Poppins", sans-serif;
+}
+
+.form__error--messages:-ms-input-placeholder {
+  color: #f46262;
+  font-family: "Poppins", sans-serif;
+}
+
+.form__error--messages::-ms-input-placeholder {
+  color: #f46262;
+  font-family: "Poppins", sans-serif;
+}
+
+.form__error--messages::placeholder {
+  color: #f46262;
+  font-family: "Poppins", sans-serif;
+}
+
+/*
+* dropedown
+*/
 .dropedown-container {
   width: 100%;
-  height: 500px;
   display: none;
 }
 
 @media screen and (min-width: 1020px) {
   .dropedown-container {
-    width: 94%;
+    width: 100%;
     display: none;
     margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -854,14 +814,11 @@ end of nav && hero section
   -ms-flex-line-pack: center;
       align-content: center;
   border-radius: 9.5px;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
 }
 
 @media screen and (min-width: 1020px) {
   .dropedown {
-    height: 48px;
+    height: 55px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -978,17 +935,25 @@ end of nav && hero section
 }
 
 .dropedown__btn {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
   width: 90%;
-  padding: 0.3rem;
+  padding: 0.6rem;
   border-radius: 3px;
   background-color: #2acfcf;
-  border: 0.0001rem solid #2acfcf;
+  border: none;
   color: white;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
-  font-size: .99rem;
+  font-size: 0.99rem;
 }
 
 @media screen and (min-width: 1020px) {
@@ -1001,60 +966,47 @@ end of nav && hero section
   }
 }
 
+.dropedown__bounce {
+  border: 2px solid white;
+  -webkit-animation: bounce 1s alternate;
+          animation: bounce 1s alternate;
+}
+
 .dropedown__btn:hover {
   background-color: #3b3054;
   border: 0.0001rem solid #232127;
   cursor: pointer;
 }
 
-.dropedown__btn:active {
+.dropedown__btn.active {
   background-color: #3b3054;
 }
 
-.bounce {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s alternate;
-          animation: bounce 1s alternate;
-}
-
-.bounce-2 {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s linear;
-          animation: bounce 1s linear;
-}
-
-.bounce-3 {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s linear;
-          animation: bounce 1s linear;
-}
-
 .advanced {
-  margin-top: -7rem;
-  padding: 0 1.5rem 6rem 1.5rem;
+  margin-top: -3rem;
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .advanced {
-    margin-top: -7rem;
+    margin-top: 4rem;
   }
 }
 
 @media screen and (min-width: 1020px) {
   .advanced {
-    margin-top: -8rem;
+    margin-top: 3rem;
     padding-bottom: 8rem;
   }
 }
 
 .advanced__change {
-  margin-top: -4rem;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 1020px) {
   .advanced__change {
-    margin-top: -25rem;
+    margin-top: 4rem;
   }
 }
 
@@ -1097,12 +1049,12 @@ end of nav && hero section
   }
 }
 
-.card-container {
+.main-card {
   padding-top: 1.5rem;
 }
 
 @media screen and (min-width: 1020px) {
-  .card-container {
+  .main-card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1115,9 +1067,9 @@ end of nav && hero section
   }
 }
 
-.recognition, .detail, .customizable {
+.card {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 9.5px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -1126,15 +1078,67 @@ end of nav && hero section
 }
 
 @media screen and (min-width: 1020px) {
-  .recognition, .detail, .customizable {
-    width: 30%;
-    height: 243px;
+  .card {
+    -webkit-transform: translateY(28px);
+            transform: translateY(28px);
+    width: 100%;
+    max-width: 300px;
+    height: 228px;
     margin: 1rem;
     padding: 0 2rem;
   }
 }
 
-.recognition__img, .detail__img, .customizable__img {
+.card__anim--bounce {
+  -webkit-animation: 3s linear 1s bounce;
+          animation: 3s linear 1s bounce;
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes slidein {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .card__detail {
+    -webkit-transform: translateY(56px);
+            transform: translateY(56px);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .card__custom {
+    -webkit-transform: translateY(90px);
+            transform: translateY(90px);
+  }
+}
+
+.card__img {
   display: block;
   margin: auto;
   position: relative;
@@ -1149,7 +1153,9 @@ end of nav && hero section
 }
 
 @media screen and (min-width: 1020px) {
-  .recognition__img, .detail__img, .customizable__img {
+  .card__img {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
     top: -50px;
     width: 75px;
     height: 75px;
@@ -1158,9 +1164,9 @@ end of nav && hero section
   }
 }
 
-.recognition__title, .detail__title, .customizable__title {
+.card__title {
   font-family: "Poppins", sans-serif;
-  width: 63%;
+  width: 86%;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -1168,38 +1174,64 @@ end of nav && hero section
 }
 
 @media screen and (min-width: 768px) {
-  .recognition__title, .detail__title, .customizable__title {
-    width: 27%;
+  .card__title {
+    width: 30%;
   }
 }
 
 @media screen and (min-width: 1020px) {
-  .recognition__title, .detail__title, .customizable__title {
+  .card__title {
     text-align: start;
     width: 109%;
     font-size: 10x;
   }
 }
 
-.recognition__body, .detail__body, .customizable__body {
+.card__body {
   font-family: "Poppins", sans-serif;
   color: #9e9aa7;
   font-size: 14px;
   display: block;
   margin: 0 auto;
-  width: 85%;
+  width: 91%;
   text-align: center;
 }
 
 @media screen and (min-width: 1020px) {
-  .recognition__body, .detail__body, .customizable__body {
+  .card__body {
     text-align: start;
     font-size: 10px;
     width: 94%;
   }
 }
 
-.recognition__bar--blue {
+.card__img--detailed {
+  background-image: url(../assets/icons/icon-detailed-records.svg);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media screen and (min-width: 1020px) {
+  .card__img--detailed {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+.card__img--custom {
+  background-image: url(../assets/icons/icon-fully-customizable.svg);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+@media screen and (min-width: 1020px) {
+  .card__img--custom {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+.card__bar--blue {
   display: block;
   margin: 0 auto;
   width: 2px;
@@ -1208,101 +1240,10 @@ end of nav && hero section
 }
 
 @media screen and (min-width: 1020px) {
-  .recognition__bar--blue {
+  .card__bar--blue {
     height: 36px;
     -webkit-transform: translate(0, 140px) rotate(90deg);
             transform: translate(0, 140px) rotate(90deg);
   }
-}
-
-.detail {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-@media screen and (min-width: 1020px) {
-  .detail {
-    -webkit-transform: translateY(28px);
-            transform: translateY(28px);
-  }
-}
-
-.customizable {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-@media screen and (min-width: 1020px) {
-  .customizable {
-    -webkit-transform: translateY(65px);
-            transform: translateY(65px);
-  }
-}
-
-.detail__img {
-  background-image: url(../assets/icons/icon-detailed-records.svg);
-}
-
-.customizable__img {
-  background-image: url(../assets/icons/icon-fully-customizable.svg);
-}
-
-#text {
-  font-family: "Poppins", sans-serif;
-  color: #f46262;
-  font-size: .6rem;
-  padding: 1rem 0;
-  display: block;
-}
-
-@media screen and (min-width: 1020px) {
-  #text {
-    position: absolute;
-    top: 114%;
-    left: 0;
-    padding: 0;
-  }
-}
-
-.error-message {
-  border: 4px solid #f46262;
-  color: #f46262;
-}
-
-.error-message::-webkit-input-placeholder {
-  color: #f46262;
-}
-
-.error-message:-ms-input-placeholder {
-  color: #f46262;
-}
-
-.error-message::-ms-input-placeholder {
-  color: #f46262;
-}
-
-.error-message::placeholder {
-  color: #f46262;
-}
-
-.new {
-  width: 100%;
-  height: 140px;
-  background-color: transparent;
-}
-
-.new__cont {
-  width: 100%;
-  height: 140px;
-  color: #f4f1f8;
-  background-color: #f46262;
-  margin-top: 2rem;
-}
-
-.new__body {
-  color: #232127;
-  text-align: justify;
-  padding: 1rem;
-  width: 90%;
 }
 /*# sourceMappingURL=styles.css.map */
