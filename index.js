@@ -13,17 +13,17 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const change = document.querySelector(".advanced")
   const drop = document.querySelector(".dropedown-container")
-  const text = document.getElementById("text");
+  const text = document.querySelector(".form__text");
   const input = document.getElementById("input").value;
-  const get = document.querySelector(".sx");
-  const section = document.querySelector(".main-form")
+  const get = document.querySelector(".add");
+  const section = document.querySelector(".form-section")
   let newDiv = document.createElement('div');
   newDiv.classList.add("new__cont");
 
 
   if (input === "") {
     text.textContent = "please add a link";
-    get.classList.add('error-message');
+    get.classList.add('form__error--messages');
 
   } else {
     document.getElementById('input').value = "";
@@ -66,24 +66,171 @@ form.addEventListener('submit', (e) => {
  * copy shortened URL 
  */
 
-const copyBtn = document.querySelectorAll('.x');
-copyBtn.forEach(item => {
-  item.addEventListener('click', (e) => {
-    item.classList.toggle('active');
-    short.classList.add("bounce");
-    navigator.clipboard.writeText(short.textContent);
-    shortS.classList.add("bounce-2")
-    navigator.clipboard.writeText(shortS.textContent);
-    shortT.classList.add("bounce-3")
-    navigator.clipboard.writeText(shortT.textContent);
-    item.textContent = `Copied!`
-    console.log(document.getSelection());
+const copyButtons = document.querySelectorAll('.dropedown__btn--copy');
+copyButtons.forEach((copyButton, ind) => {
+  copyButton.addEventListener('click', (e) => {
+
+    /**
+     * Remove .bounce from previously copied button
+     */
+    const currentCopiedButton = document.querySelector('.dropedown__btn--copy.dropedown__bounce')
+    currentCopiedButton && currentCopiedButton.classList.remove('dropedown__bounce')
+    // Remove if button with .bounce exists/ currentCopiedButton !== null
+
+    /**
+     * Add .bounce to current button
+     */
+    const shortTextSh = document.querySelectorAll('[class*="dropedown__text--sh"]')[ind]
+    shortTextSh.classList.add('dropedown__bounce')
+    navigator.clipboard.writeText(shortTextSh.textContent);	// Copy text
+
+    copyButton.textContent = `Copied!`
   });
-
-
 });
 
+// const copyBtn = document.querySelectorAll('.copy');
+// copyBtn.forEach(item => {
+//   item.addEventListener('click', (e) => {
+//     item.classList.toggle('active');
+//     short.classList.add("bounce");
+//     navigator.clipboard.writeText(short.textContent);
+//     shortS.classList.add("bounce-2")
+//     navigator.clipboard.writeText(shortS.textContent);
+//     shortT.classList.add("bounce-3")
+//     navigator.clipboard.writeText(shortT.textContent);
+//     item.textContent = `Copied!`
+//     console.log(document.getSelection());
+//   });
 
+
+// });
+
+/**
+ * Set up IntersectionObserver API
+ * @param {array} elements 
+ * @param {function} enterCallback 
+ * @param {function} exitCallback 
+ * @param {object} options 
+ */
+const setIntersectionObserver = (elements, enterCallback, exitCallback, options = null) => {
+  /**
+   * Options for IntersectionObserver
+   */
+  const observerOptions = {
+    threshold: 0.5,	// Considers as "intersected" if at least 50% of the target element is visible
+    ...options	// Any additional options or to change "threshold" value
+  }
+
+  const observer = new IntersectionObserver((items) => {
+    items.forEach((item) => {
+      const { target, isIntersecting } = item
+
+      if (isIntersecting) {	// Intersect
+        enterCallback(target)
+      }
+      else {					// Not intersect
+        exitCallback(target)
+      }
+    })
+  },
+    observerOptions
+  )
+
+  elements.forEach(element => {
+    observer.observe(element)	// Observe to check when scrolling reaches element
+  })
+}
+
+const cards = document.querySelectorAll(".card__img")
+
+/**
+ * Observe intersection for cards
+ */
+const observeCardsIntersect = () => {
+  setIntersectionObserver(cards, onCardEnter, onCardExit)
+}
+
+/**
+ * Handle when .card/.card__detail/.card__custom has intersection
+ * @param {object} item 
+ */
+const onCardEnter = (item) => {
+  // Enter scripts here
+  item.classList.add("card__anim--bounce")
+
+}
+
+/**
+ * Handle when .recognition/.detail/.customizable has no intersection
+ * @param {object} item 
+ */
+const onCardExit = (item) => {
+  // Enter scripts here
+  item.classList.remove("card__anim--bounce")
+
+}
+observeCardsIntersect();
+
+
+
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     const cins = entry.target.querySelector('.card__img');
+//     // const cins2 = entry.target.querySelector(".card__detail");
+//     // const cins3 = entry.target.querySelector(".card__custom");
+
+
+//     if (entry.isIntersecting) {
+//       cins.classList.add('card__anim--bounce');
+//       // cins2.classList.add('card__anim--bounce');
+//       // cins3.classList.add('card__anim--bounce');
+
+
+//       return; // if we added the class, exit the function
+
+//     } else {
+//       cins.classList.remove('card__anim--bounce');
+//     }
+
+//     // We're not intersecting, so remove the class!
+
+//   });
+// });
+
+// observer.observe(document.querySelector('.main-card'));
+
+
+
+
+/**
+ * Observe intersection for cards
+ */
+
+const formContainer = document.querySelector(".form-container")
+const observeFormIntersect = () => {
+  setIntersectionObserver([formContainer], onFormEnter, onFormExit)
+}
+
+/**
+ * Handle when .card/.card__detail/.card__custom has intersection
+ * @param {object} item 
+ */
+const onFormEnter = (item) => {
+  // Enter scripts here
+  item.classList.add("form-container__anim")
+
+}
+
+/**
+ * Handle when .recognition/.detail/.customizable has no intersection
+ * @param {object} item 
+ */
+const onFormExit = (item) => {
+  // Enter scripts here
+  item.classList.remove("form-container__anim")
+
+}
+observeFormIntersect();
 
 
 
@@ -100,6 +247,7 @@ const observeBoostIntersect = () => {
       // intersects Boost
       if (entry.intersectionRatio > 0) {
         boostSection.classList.add("anim");
+
       } else {
         boostSection.classList.remove("anim");
       }
