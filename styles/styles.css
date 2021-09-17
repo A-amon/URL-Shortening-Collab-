@@ -662,7 +662,18 @@ end of nav && hero section
     width: 100.5%;
     height: 102%;
     top: 1px;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
   }
+}
+
+.form-container__anim::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .form {
@@ -726,7 +737,7 @@ end of nav && hero section
   font-family: "Poppins", sans-serif;
   color: #f46262;
   font-size: 0.8rem;
-  padding-bottom: .9rem;
+  padding-bottom: 0.9rem;
   display: block;
 }
 
@@ -777,6 +788,7 @@ end of nav && hero section
     width: 100%;
     display: none;
     margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -954,6 +966,12 @@ end of nav && hero section
   }
 }
 
+.dropedown__bounce {
+  border: 2px solid white;
+  -webkit-animation: bounce 1s alternate;
+          animation: bounce 1s alternate;
+}
+
 .dropedown__btn:hover {
   background-color: #3b3054;
   border: 0.0001rem solid #232127;
@@ -962,24 +980,6 @@ end of nav && hero section
 
 .dropedown__btn.active {
   background-color: #3b3054;
-}
-
-.bounce {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s alternate;
-          animation: bounce 1s alternate;
-}
-
-.bounce-2 {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s linear;
-          animation: bounce 1s linear;
-}
-
-.bounce-3 {
-  border: 2px solid white;
-  -webkit-animation: bounce 1s linear;
-          animation: bounce 1s linear;
 }
 
 .advanced {
@@ -1081,10 +1081,46 @@ end of nav && hero section
   .card {
     -webkit-transform: translateY(28px);
             transform: translateY(28px);
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
     height: 228px;
     margin: 1rem;
     padding: 0 2rem;
+  }
+}
+
+.card__anim--bounce {
+  -webkit-animation: 3s linear 1s bounce;
+          animation: 3s linear 1s bounce;
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes slidein {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -1182,14 +1218,14 @@ end of nav && hero section
   }
 }
 
-.card__img--customizable {
+.card__img--custom {
   background-image: url(../assets/icons/icon-fully-customizable.svg);
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
 @media screen and (min-width: 1020px) {
-  .card__img--customizable {
+  .card__img--custom {
     -webkit-transform: translateY(15px);
             transform: translateY(15px);
   }

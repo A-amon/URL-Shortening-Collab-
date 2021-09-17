@@ -474,30 +474,30 @@ end of nav && hero section
 /*
 * form section
 */
-.form-section{
-    margin-top:11rem;
-    background-color: $c-lightgray-original;
-    padding-bottom: 5rem;
+.form-section {
+  margin-top: 11rem;
+  background-color: $c-lightgray-original;
+  padding-bottom: 5rem;
 }
-.form-container{
-    width: 100%;
-    height: 199px;
-    padding: 4rem 0;
-    background-color: $c-verydarkblue;
-    border-radius: 15px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(241, 238, 238, 0.2);
-    position: relative;
-    top: -108px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -5rem;
-    overflow: hidden;
-    @include laptop-query{
-      height:119px;
-      top:-91px
-    }
+.form-container {
+  width: 100%;
+  height: 199px;
+  padding: 4rem 0;
+  background-color: $c-verydarkblue;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(241, 238, 238, 0.2);
+  position: relative;
+  top: -108px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -5rem;
+  overflow: hidden;
+  @include laptop-query {
+    height: 119px;
+    top: -91px;
+  }
 
   &::before {
     content: "";
@@ -511,101 +511,108 @@ end of nav && hero section
     top: 0.8px;
     right: 0;
     bottom: 0;
-    @include laptop-query{
+    @include laptop-query {
       background-image: url(../assets/images/bg-shorten-desktop.svg);
       width: 100.5%;
       height: 102%;
       top: 1px;
+      transform: scale(2);
+      transition: transform 0.5s;
+    }
+  }
+  &__anim {
+    &::before {
+      transform: scale(1);
     }
   }
 }
-.form{
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-    @include laptop-query{
-      flex-direction: row;
-      justify-content: space-around;
-      position: relative;
-    }
-  &__input{
+
+.form {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  @include laptop-query {
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+  }
+  &__input {
     font-size: 1rem;
     width: 100%;
     padding: 1rem;
-    @include laptop-query{
+    @include laptop-query {
       width: 75%;
     }
   }
-  &__btn{     
+  &__btn {
     width: 100%;
     padding: 1rem;
     background-color: $c-cyan;
     border: none;
     border-radius: 5px;
-    color:$c-white;
+    color: $c-white;
     font-size: 18px;
     font-weight: bolder;
-    @include laptop-query{
+    @include laptop-query {
       width: 17%;
     }
-
   }
 
   &__text {
     font-family: $ff-poppins;
     color: $c-red;
     font-size: 0.8rem;
-    padding-bottom: .9rem ;
+    padding-bottom: 0.9rem;
     display: block;
-  @include laptop-query {
-    position: absolute;
-    top:100%;
-    left: 0;
-    padding: 0 2.1rem;
+    @include laptop-query {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0 2.1rem;
+    }
   }
-}
 
-&__error--messages {
-  border: 3px solid $c-red;
-  color: $c-red;
-&::placeholder {
-  color: $c-red;
-  font-family: $ff-poppins;
-}
-}
+  &__error--messages {
+    border: 3px solid $c-red;
+    color: $c-red;
+    &::placeholder {
+      color: $c-red;
+      font-family: $ff-poppins;
+    }
+  }
 }
 /*
 * dropedown
 */
 .dropedown-container {
-    width: 100%;
-    display: none;
+  width: 100%;
+  display: none;
   @include tablet-query {
   }
   @include laptop-query {
     width: 100%;
     display: none;
     margin: 0 auto;
+    padding: 0;
   }
 }
-
 .drop {
-    display: block;
+  display: block;
 }
 .dropedown {
-    width: 100%;
-    height: 160px;
-    margin: 0 0 $m-base * 1.9 0;
-    background-color: $c-white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
-    border-radius: 9.5px;
-  
+  width: 100%;
+  height: 160px;
+  margin: 0 0 $m-base * 1.9 0;
+  background-color: $c-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  border-radius: 9.5px;
+
   @include tablet-query {
   }
   @include laptop-query {
@@ -626,13 +633,13 @@ end of nav && hero section
     width: 90%;
     max-width: fit-content;
     @include tablet-query {
-    padding: 0px 2.3rem;
-    font-size: 14px;
+      padding: 0px 2.3rem;
+      font-size: 14px;
     }
     @include laptop-query {
-    max-width: none;
-    font-size: 10px;
-    padding: 0px 1.4rem;
+      max-width: none;
+      font-size: 10px;
+      padding: 0px 1.4rem;
     }
   }
   &__text--sh1,
@@ -642,26 +649,26 @@ end of nav && hero section
     color: $c-cyan;
     font-weight: $fw-bold;
     @keyframes bounce {
-    0% {
-    transform: scale(1);
-     }
-    25% {
-    transform: scale(0.6);
-    }
-    50% {
-    transform: scale(1);
-    }
-    75% {
-    transform: scale(0.9);
+      0% {
+        transform: scale(1);
       }
-    100% {
-    transform: scale(1);
+      25% {
+        transform: scale(0.6);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
       }
     }
     @include laptop-query {
-    width: 93px;
-    margin: 0;
-    padding: 0;
+      width: 93px;
+      margin: 0;
+      padding: 0;
     }
   }
   &__hr {
@@ -669,7 +676,7 @@ end of nav && hero section
     background-color: $c-lightragy-bar;
     border: none;
     @include laptop-query {
-    display: none;
+      display: none;
     }
   }
   &__btn {
@@ -678,7 +685,7 @@ end of nav && hero section
     align-items: center;
     margin: 0 auto;
     width: 90%;
-    padding: $p-base * .6;
+    padding: $p-base * 0.6;
     border-radius: 3px;
     background-color: $c-cyan;
     border: none;
@@ -688,14 +695,17 @@ end of nav && hero section
     font-size: 0.99rem;
 
     @include laptop-query {
-    width: 7%;
-    border-radius: 3px;
-    margin: 2rem 1rem;
-    padding: $p-base * 0.3;
-    font-size: 10px;
+      width: 7%;
+      border-radius: 3px;
+      margin: 2rem 1rem;
+      padding: $p-base * 0.3;
+      font-size: 10px;
     }
   }
-
+  &__bounce {
+    border: 2px solid $c-white;
+    animation: bounce 1s alternate;
+  }
   &__btn:hover {
     background-color: $c-darkviolet;
     border: 0.0001rem solid $c-verydarkviolet;
@@ -705,22 +715,10 @@ end of nav && hero section
     background-color: $c-darkviolet;
   }
 }
-.bounce {
-    border: 2px solid $c-white;
-    animation: bounce 1s alternate;
-}
-.bounce-2 {
-   border: 2px solid $c-white;
-   animation: bounce 1s linear;
-}
-.bounce-3 {
-  border: 2px solid $c-white;
-  animation: bounce 1s linear;
-}
 
 .advanced {
-   margin-top: $m-base * -3;
-   width: 100%;
+  margin-top: $m-base * -3;
+  width: 100%;
   @include tablet-query {
     margin-top: $m-base * 4;
   }
@@ -731,7 +729,7 @@ end of nav && hero section
   &__change {
     margin-top: $m-base * 1;
     @include laptop-query {
-    margin-top: $m-base * 4;
+      margin-top: $m-base * 4;
     }
   }
   &__title,
@@ -759,13 +757,13 @@ end of nav && hero section
     padding: $p-base;
     margin-bottom: 2.9rem;
     @include laptop-query {
-    font-size: 18px;
-    width: 58%;
+      font-size: 18px;
+      width: 58%;
     }
   }
 }
 .main-card {
-    padding-top: $p-base * 1.5;
+  padding-top: $p-base * 1.5;
   @include laptop-query {
     display: flex;
     justify-content: center;
@@ -774,33 +772,49 @@ end of nav && hero section
   }
 }
 .card {
-    width: 100%;
-    padding: $p-base*2;
-    background-color: $c-white;
-    border-radius: 9.5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgb(255, 255, 255);
-    
+  width: 100%;
+  padding: $p-base * 2;
+  background-color: $c-white;
+  border-radius: 9.5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(255, 255, 255);
+
   @include tablet-query {
   }
   @include laptop-query {
     transform: translateY(28px);
-
-    width: 30%;
+    width: 100%;
+    max-width: 300px;
     height: 228px;
     margin: $m-base;
     padding: 0 $p-base * 2;
   }
-  &__detail{
-    @include laptop-query{
-    transform: translateY(56px);
+  &__anim--bounce {
+    animation: 3s linear 1s bounce;
+    @keyframes slidein {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
   }
-  &__custom{
-    @include laptop-query{
-  transform: translateY(90px);
+  &__detail {
+    @include laptop-query {
+      transform: translateY(56px);
     }
-}
+  }
+  &__custom {
+    @include laptop-query {
+      transform: translateY(90px);
+    }
+  }
 
   &__img {
     display: block;
@@ -814,14 +828,15 @@ end of nav && hero section
     background-image: url(../assets/icons/icon-brand-recognition.svg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-
     @include laptop-query {
-    transform: translateY(15px);
-    top: -50px;
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    left: -75px;
+      transform: translateY(15px);
+      top: -50px;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      left: -75px;
+      // animation: fadeInOut 2s 1 forwards ease-out;
+      // animation: 3s linear 1s bounce;
     }
   }
   &__title {
@@ -832,12 +847,12 @@ end of nav && hero section
     text-align: center;
     padding-bottom: 1rem;
     @include tablet-query {
-    width: 30%;
+      width: 30%;
     }
     @include laptop-query {
-    text-align: start;
-    width: 109%;
-    font-size: 10x;
+      text-align: start;
+      width: 109%;
+      font-size: 10x;
     }
   }
   &__body {
@@ -849,57 +864,35 @@ end of nav && hero section
     width: 91%;
     text-align: center;
     @include laptop-query {
-    text-align: start;
-    font-size: 10px;
-    width: 94%;
+      text-align: start;
+      font-size: 10px;
+      width: 94%;
     }
   }
 
-&__img--detailed {
+  &__img--detailed {
     background-image: url(../assets/icons/icon-detailed-records.svg);
     transform: translateY(0);
-  @include laptop-query {
-    transform: translateY(15px);
+    @include laptop-query {
+      transform: translateY(15px);
+    }
   }
-}
-&__img--customizable {
-   background-image: url(../assets/icons/icon-fully-customizable.svg);
-   transform: translateY(0);
-  @include laptop-query {
-    transform: translateY(15px);
+  &__img--custom {
+    background-image: url(../assets/icons/icon-fully-customizable.svg);
+    transform: translateY(0);
+    @include laptop-query {
+      transform: translateY(15px);
+    }
   }
-}
-&__bar--blue {
+  &__bar--blue {
     display: block;
     margin: 0 auto;
     width: 2px;
     border-left: 4px solid $c-cyan;
     height: 70px;
-  @include laptop-query {
-    height: 36px;
-    transform: translate(0, 140px) rotate(90deg);
+    @include laptop-query {
+      height: 36px;
+      transform: translate(0, 140px) rotate(90deg);
+    }
   }
 }
-}
-
-
-
-// .new {
-//     width: 100%;
-//     height: 140px;
-//     background-color: transparent;
-
-//   &__cont {
-//     width: 100%;
-//     height: 140px;
-//     color: $c-lightragy;
-//     background-color: $c-red;
-//     margin-top: 2rem;
-//   }
-//   &__body {
-//     color: $c-verydarkviolet;
-//     text-align: justify;
-//     padding: $p-base;
-//     width: 90%;
-//   }
-// }
